@@ -1,0 +1,46 @@
+    <img class="modal__poster" src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="poster" />
+    <div class="modal__text">
+        <h2 class="modal__title">{{title}}</h2>
+        <ul class="modal__list">
+            <li class="modal__item">
+                <p class="modal__item-features">Vote / Votes</p>
+                <p class="modal__item-details">
+                    <span class="modal__item-vote">{{vote_average}}</span> /
+                    <span class="modal__item-votes">{{vote_count}}</span>
+                </p>
+            </li>
+            <li class="modal__item">
+                <p class="modal__item-features">Popularity</p>
+                <p class="modal__item-details">{{popularity}}</p>
+            </li>
+            <li class="modal__item">
+                <p class="modal__item-features">Original Title</p>
+                <p class="modal__item-details">{{original_title}}</p>
+            </li>
+            <li class="modal__item">
+                <p class="modal__item-features">Genre</p>
+                <ul>
+                    {{#each genres}}
+                    <li class="modal__item-details">{{name}}</li>
+                    {{/each}}
+                </ul>
+            </li>
+        </ul>
+        <h3 class="modal__description-title">about</h3>
+        <p class="modal__description-text">{{overview}}</p>
+        <div class="button-container">
+            <div class="button__modal__container">
+                <button class="button button--watched" id="add-to-watched" type="button">
+                    add to watched
+                </button>
+            </div>
+            <div class="button__modal__container">
+                <button class="button button--modal" id="add-to-queue" type="button">add to queue</button>
+            </div>
+            <div class="button__modal__container">
+                <button class="button button--watched" id="remove" type="button">
+                    remove
+                </button>
+            </div>
+        </div>
+    </div>

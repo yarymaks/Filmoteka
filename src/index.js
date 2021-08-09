@@ -1,0 +1,9 @@
+import './sass/styles.scss';
+import './js/modal';
+import './js/theme';
+import './js/anchorTop';
+import './js/searchMovies';
+import './js/pagination';
+import './js/refs';
+import './js/footer';
+import './js/modal-team';

@@ -1,0 +1,113 @@
+.films {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.films__list {
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    margin: -5px;
+  }
+  @media screen and (min-width: 1024px) {
+    margin: -10px;
+  }
+}
+
+.card {
+  border-radius: 10px 10px 10px 10px;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(235, 241, 241, 1) 0%,
+    rgba(205, 247, 255, 1) 100%
+  );
+
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+
+  @media screen and (min-width: 768px) {
+    width: calc((100% - 4 * 15px) / 2);
+    margin: 15px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: calc((100% - 8 * 10px) / 4);
+    margin: 10px;
+  }
+
+  @media screen and (max-width: 767px) {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+
+  @media screen and (min-width: 400px) {
+    @media screen and (max-width: 768px) {
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+  overflow: hidden;
+  box-shadow: none;
+  transition: box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    transform: scale(1.05);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+      0px 2px 1px rgba(173, 167, 167, 0.2);
+  }
+}
+
+.card img {
+  width: 100%;
+}
+
+.card__text-content {
+  padding-top: 10px;
+  font-weight: 500;
+  padding-bottom: 10px;
+}
+
+.films__title {
+  margin: 0;
+  margin-left: 10px;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+}
+
+.films__paragraph {
+  color: $accent-text-color;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.films__rating {
+  color: $white-text-color;
+  background-color: $accent-bg-color;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 16px;
+  border-radius: 5px;
+}
+
+.genre {
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: auto;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  fill: #afb1b8;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}

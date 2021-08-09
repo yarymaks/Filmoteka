@@ -1,0 +1,79 @@
+body {
+  color: $primary-text-color;
+  background-color: $primary-bg-color;
+  font-family: Roboto, sans-serif;
+  font-size: $primary-font-size;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+main {
+  flex: 1;
+}
+html {
+  overflow-y: scroll;
+}
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 320px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  @include for-size(tablet) {
+    min-width: 768px;
+  }
+  @include for-size(desktop) {
+    max-width: 1024px;
+  }
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.anchor {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+}
+
+.anchor:hover {
+  transition: 1s;
+  border-radius: 50%;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(173, 167, 167, 0.2);
+}
+
+.pulse {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px / 100px;
+  animation: radial-pulse 3s infinite;
+}
+
+.wrapper {
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes radial-pulse {
+  0% {
+    box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.5);
+  }
+
+  100% {
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+  }
+}

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <title>Filmoteka</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <p class="notification">you haven't added films</p>
+    <header class="header" id="header">
+      <div class="container">
+        <div class="toolbar">
+          <p class="theme-switch__title">Light Theme</p>
+          <!-- Разметка переключателя темы -->
+          <div class="theme-switch">
+            <div class="theme-switch__control">
+              <input
+                class="theme-switch__toggle"
+                type="checkbox"
+                name="theme"
+                id="theme-switch-toggle"
+                aria-label="Переключить между тёмной и светлой темой"
+              />
+              <label
+                aria-hidden="true"
+                class="theme-switch__track"
+                for="theme-switch-toggle"
+              >
+              </label>
+              <div aria-hidden="true" class="theme-switch__marker"></div>
+            </div>
+          </div>
+        </div>
+        <nav class="nav">
+          <div class="nav__logo">
+            <button
+              class="nav__buttons__button nav__logo__link button--logo"
+              id="logo"
+            >
+              <svg class="nav__logo__link__icon">
+                <use href="./images/sprite.svg#icon-film"></use>
+              </svg>
+              <p class="nav__logo__title">Filmoteka</p>
+            </button>
+          </div>
+          <div class="nav__buttons">
+            <button class="nav__buttons__button" id="home">Home</button>
+            <button class="nav__buttons__button" id="library">
+              My Library
+            </button>
+          </div>
+        </nav>
+        <div class="nav__homePage">
+          <div class="header__form">
+            <form class="search-form" id="search-form">
+              <div class="form__group">
+                <input
+                  class="form-control"
+                  type="text"
+                  name="query"
+                  autocomplete="off"
+                  placeholder="Search films..."
+                />
+                <button class="nav__buttons__button search">
+                  <i class="material-icons search__icon">search</i>
+                </button>
+              </div>
+            </form>
+          </div>
+          <div class="nav__error">
+            <p class="nav__error__message">
+              Search result not successful. Enter the correct movie name and
+            </p>
+          </div>
+        </div>
+        <div class="header__buttons">
+          <div class="header__buttons__container">
+            <button class="button button--watched" id="watched" type="button">
+              watched
+            </button>
+          </div>
+          <div class="header__buttons__container">
+            <button class="button" id="queue" type="button">queue</button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Галерея фильмов -->
+    <main>
+      <section class="films">
+        <div class="container">
+          <div class="lds-ring spinner spinner-is-hidden">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <ul class="list films__list" id="films-section"></ul>
+          <!-- пагинация -->
+          <div id="pagination-container" class="pagination-container"></div>
+        </div>
+      </section>
+      <!-- Футер -->
+    </main>
+
+    <!-- ссылка наверх -->
+    <div id="gototop" class="anchor wrapper">
+      <a class="pulse" href="#header"> <img src="./images/up-1.png " /> </a>
+    </div>
+
+    <!--  Модальное окно -->
+    <div class="backdrop is-hidden">
+      <div class="modal-relative">
+        <button class="button-close">
+          <svg>
+            <use href="./images/sprite.svg#icon-close"></use>
+          </svg>
+        </button>
+        <div class="lds-ring spinnerInModal spinner-is-hidden">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="modal team"></div>
+      </div>
+    </div>
+  </body>
+</html>
